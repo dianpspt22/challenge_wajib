@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SECTION 6-5</title>
+    </head>
+
+    <body>
+        <h1>Daftar Nama Siswa Kelas 4</h1>
+        <table border="1">
+            <tr>
+                <th>Nama</th>
+            </tr>
+            <tr>
+                <td id="name">Anita Putri</td>
+            </tr>
+            <tr>
+                <td id="name1">Putri Sari</td>
+            </tr>
+            <tr>
+                <td id="name2">Ayu Sekar</td>
+            </tr>
+        </table>
+        <br>
+        
+        <button onclick="changeHTML()">Change HTML</button>
+        <button onclick="changeStyle()">Change HTML</button>
+        
+        <script>
+            //SECTION 5-6
+            function changeHTML() {
+                const td = document.getElementById('name2');
+                td.innerHTML = '<p>Agus Ambara</p>';
+            }
+            
+            //Section 5
+            const name = document.getElementById('name');
+            name.setAttribute('title', 'Nama ini absen pertama');
+            console.log(name.getAttribute('title'));
+
+            //Section 6
+            function changeStyle() {
+                const td = document.getElementById('name2');
+                td.style.backgroundColor = 'blue';
+                td.style.color = 'white';
+                td.style.fontSize = '15px';
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SECTION 2-4</title>
+</head>
+<body>
+    <!--Usecase mengenai pemesanan makanan di restaurant-->
+    <h1>Menu Pesanan Restaurant</h1>
+    <table border="1">
+        <tbody>
+            <tr>
+                <th>Pesanan</th>
+            </tr>
+            <tr>
+                <td>
+                    <ul id="food-list">
+                        <li class="food">Ayam Goreng</li>
+                        <li class="food">Jus Jeruk</li>
+                        <li class="food">Cumi Goreng</li>
+                        <li class="food">Dimsum</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+
+        //SECTION 2-4
+        // Memilih Element yang akan di berikan DOM menggunakan querySelector
+        const foodList = document.querySelector('#food-list'); //section 2
+        const food_Items = document.querySelectorAll('.food');
+
+        //Section 3
+        // Melintasi Element
+        console.log(foodList.firstChild); // Output: #text
+        console.log(foodList.firstElementChild); // Output: <li class="food">Ayam Goreng</li>
+        console.log(foodList.lastChild); // Output: #text
+        console.log(foodList.lastElementChild); // Output: <li class="food">Jus Jeruk</li>
+        console.log(food_Items[1].nextSibling); // Output: #text
+        console.log(food_Items[1].nextElementSibling); // Output: <li class="food">Cumi Goreng</li>
+        console.log(food_Items[3].previousSibling); // Output: #text
+        console.log(food_Items[3].previousElementSibling); // Output: <li class="food">Dimsum</li>
+
+        //Section 4
+        // Memanipulasi Element
+        const tambahFoodBtn = document.createElement('button'); //membuat button untuk menambah makanan
+        tambahFoodBtn.textContent = 'Tambah Makanan';
+        document.body.appendChild(tambahFoodBtn);
+
+        tambahFoodBtn.addEventListener('click', function() { //membuat pop up yang berisi teks
+            const inputFood = prompt('Masukkan pilihan menu makanan:');
+            const liBaru = document.createElement('li');
+            liBaru.textContent = inputFood;
+            foodList.appendChild(liBaru);
+        });
+
+        food_Items[1].textContent = 'Jus Jeruk'; //memberikan warna merah pada items minuman
+        food_Items[1].style.color = 'red';
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SECTION 7-8</title>
+    </head>
+    <body>
+        <h1>Form Persetujuan</h1>
+        <img src="foto/7.jpg" alt="form">
+        <p>Saya menyetujui form diatas</p>
+        <label for="accept">
+            <input type="checkbox" id="accept" name="accept" value="yes"> Accept
+        </label>
+
+        <br>
+        <br>
+        <button id="btn">Simpan</button>
+
+        <script>
+            //SECTION 7-8
+
+            //Section 7
+            // memilih id btn yang akan dieksekusi
+            let btn = document.querySelector('#btn');
+
+            btn.addEventListener('click',function() { //menampilkan pop up berisi teks
+                alert('Jawaban Telah Disimpan');
+            });
+
+            //Section 8
+            //membuat checkbox
+            const cb = document.querySelector('#accept');
+            console.log(cb.checked); // false
+        </script>
+    </body>
+</html>
